@@ -38,7 +38,7 @@ function aiChoice() {
     return hands[Math.floor(Math.random() * 3)].dataset.option;
 }
 
-function checkResult() {
+function checkResult(player, ai) {
 
 
 
