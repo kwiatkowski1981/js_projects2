@@ -36,8 +36,7 @@ function handSelection() {
 
 
 function aiChoice() {
-    const aiChooseIndex = hands[Math.floor(Math.random() * 3)].dataset.option;
-    return aiChooseIndex;
+    return hands[Math.floor(Math.random() * 3)].dataset.option;
 }
 // druga funkcja ====> funkcja sterująca startGame
 
