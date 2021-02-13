@@ -39,7 +39,20 @@ function aiChoice() {
 }
 
 function checkResult(player, ai) {
+if (player === ai) {
+    // console.log("remis")
+    return 'draw';
+}else if ((player === "papier"   &&   ai === "kamień") ||
+          (player === "nożyczki" &&   ai === "papier") ||
+          (player === "kamień"   &&   ai === "nożyczki"))
+    {
+    // console.log("wygrałeś");
+        return 'win';
+}else {
 
+    console.log("przegrałeś");
+    return 'loss'
+}
 
 
 }
