@@ -39,13 +39,12 @@ function aiChoice() {
     return hands[Math.floor(Math.random() * 3)].dataset.option;
 }
 // druga funkcja ====> funkcja sterująca startGame
-
+//************************************************
 function startGame() {
 if (!game.playerHand) return alert("wybierz dłoń !!!");
 
-
 game.aiHand = aiChoice();
-
+const gameResult = checkResult();
 console.log(game.aiHand)
 
 }
