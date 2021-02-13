@@ -32,6 +32,11 @@ const hands =[... document.querySelectorAll('.select img')];
 //pierwsza funkcja
 
 function handSelection() {
-    console.log(this);
+    // console.log(this);
+    game.playerHand = this.dataset.option;
+    console.log(game.playerHand);
+
+
+
 }
 hands.forEach(hand => hand.addEventListener('click', handSelection))
