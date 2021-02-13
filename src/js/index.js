@@ -8,12 +8,7 @@ import '../scss/main.scss';
 
 console.log('HELLO 🚀');
 
-const btnStart = document.querySelector('.start');
-const divSelect = document.querySelector('.select')
-const divPanelLeft = document.querySelector('.panel-left');
-const divPanelRight = document.querySelector('.panel-right');
-
-const gameSumary = {
+const gameSummary = {
     numbers: 0,
     wins: 0,
     losses: 0,
@@ -35,8 +30,17 @@ function handSelection() {
     // console.log(this);
     game.playerHand = this.dataset.option;
     console.log(game.playerHand);
+    hands.forEach(hand => hand.style.boxShadow = '');
+    this.style.boxShadow = '0 0 0 4px yellow';
+}
 
+// druga funkcja ====> funkcja sterująca startGame
 
+function startGame() {
 
 }
-hands.forEach(hand => hand.addEventListener('click', handSelection))
+
+
+hands.forEach(hand => hand.addEventListener('click', handSelection));
+
+document.querySelector('.start').addEventListener('click', startGame);
