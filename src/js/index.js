@@ -21,13 +21,11 @@ const game = {
     playerHandHTML: "",
 }
 
-const hands =[... document.querySelectorAll('.select img')];
-// console.log(hands);
+const hands = [...document.querySelectorAll('.select img')];
 
 //pierwsza funkcja
 
 function handSelection() {
-    // console.log(this);
     game.playerHand = this.dataset.option;
     console.log(game.playerHand);
     hands.forEach(hand => hand.style.boxShadow = '');
@@ -39,35 +37,27 @@ function aiChoice() {
 }
 
 function checkResult(player, ai) {
-if (player === ai) {
-    // console.log("remis")
-    return 'draw';
-}else if ((player === "papier"   &&   ai === "kamień") ||
-          (player === "nożyczki" &&   ai === "papier") ||
-          (player === "kamień"   &&   ai === "nożyczki"))
-    {
-    // console.log("wygrałeś");
+    if (player === ai) {
+        return 'draw';
+    } else if ((player === "papier" && ai === "kamień") ||
+        (player === "nożyczki" && ai === "papier") ||
+        (player === "kamień" && ai === "nożyczki")) {
         return 'win';
-}else {
-
-    console.log("przegrałeś");
-    return 'loss'
-}
-
-
+    } else {
+        return 'loss'
+    }
 }
 
 // druga funkcja ====> funkcja sterująca startGame
 //************************************************
 function startGame() {
-if (!game.playerHand) return alert("wybierz dłoń !!!");
+    if (!game.playerHand) return alert("wybierz dłoń !!!");
 
-game.aiHand = aiChoice();
-const gameResult = checkResult(game.playerHand, game.aiHand);
-console.log(game.aiHand)
-
+    game.aiHand = aiChoice();
+    const gameResult = checkResult(game.playerHand, game.aiHand);
+    console.log(game.aiHand)
+    console.log(gameResult);
 }
-
 
 hands.forEach(hand => hand.addEventListener('click', handSelection));
 
