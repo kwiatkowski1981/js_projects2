@@ -34,9 +34,20 @@ function handSelection() {
     this.style.boxShadow = '0 0 0 4px yellow';
 }
 
+
+function aiChoice() {
+    const aiChooseIndex = hands[Math.floor(Math.random() * 3)].dataset.option;
+    return aiChooseIndex;
+}
 // druga funkcja ====> funkcja sterująca startGame
 
 function startGame() {
+if (!game.playerHand) return alert("wybierz dłoń !!!");
+
+
+game.aiHand = aiChoice();
+
+console.log(game.aiHand)
 
 }
 
