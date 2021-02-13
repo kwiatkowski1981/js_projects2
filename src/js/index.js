@@ -34,17 +34,23 @@ function handSelection() {
     this.style.boxShadow = '0 0 0 4px yellow';
 }
 
-
 function aiChoice() {
     return hands[Math.floor(Math.random() * 3)].dataset.option;
 }
+
+function checkResult() {
+
+
+
+}
+
 // druga funkcja ====> funkcja sterująca startGame
 //************************************************
 function startGame() {
 if (!game.playerHand) return alert("wybierz dłoń !!!");
 
 game.aiHand = aiChoice();
-const gameResult = checkResult();
+const gameResult = checkResult(game.playerHand, game.aiHand);
 console.log(game.aiHand)
 
 }
