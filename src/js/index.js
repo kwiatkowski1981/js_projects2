@@ -54,7 +54,7 @@ function publishResult(player, ai, result) {
 document.querySelector('[data-summary="your-choice"]').textContent = player;
 document.querySelector('[data-summary="ai-choice"]').textContent = ai;
 document.querySelector('[data-summary="who-win"]').textContent = result;
-
+gameSummary.numbers++
 }
 
 
