@@ -48,6 +48,11 @@ function checkResult(player, ai) {
     }
 }
 
+// publikacja wyniku
+
+
+
+
 // druga funkcja ====> funkcja sterująca startGame
 //************************************************
 function startGame() {
@@ -57,6 +62,7 @@ function startGame() {
     const gameResult = checkResult(game.playerHand, game.aiHand);
     console.log(game.aiHand)
     console.log(gameResult);
+    publishResult();
 }
 
 hands.forEach(hand => hand.addEventListener('click', handSelection));
