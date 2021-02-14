@@ -50,7 +50,12 @@ function checkResult(player, ai) {
 
 // publikacja wyniku
 
+function publishResult(player, ai, result) {
+document.querySelector('[data-summary="your-choice"]').textContent = player;
+document.querySelector('[data-summary="ai-choice"]').textContent = ai;
+document.querySelector('[data-summary="who-win"]').textContent = result;
 
+}
 
 
 // druga funkcja ====> funkcja sterująca startGame
@@ -62,7 +67,7 @@ function startGame() {
     const gameResult = checkResult(game.playerHand, game.aiHand);
     console.log(game.aiHand)
     console.log(gameResult);
-    publishResult();
+    publishResult(game.playerHand, game.aiHand, gameResult);
 }
 
 hands.forEach(hand => hand.addEventListener('click', handSelection));
