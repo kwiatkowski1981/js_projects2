@@ -71,9 +71,9 @@ function publishResult(player, ai, result) {
 }
 
 function gameReset() {
+
+    document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
     game.playerHand = "";
-    game.aiHand = "";
-    hands.forEach(hand => hand.style.boxShadow = '');
 }
 
 
